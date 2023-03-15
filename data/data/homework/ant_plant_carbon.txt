@@ -1,0 +1,12 @@
+p001,梭梭树,17
+p002,沙柳,19
+p003,樟子树,146
+p004,胡杨,215
+
+//读取树的数据
+    val treeDF: DataFrame = spark
+      .read
+      .format("csv")
+      .option("sep", ",")
+      .schema("plant_id STRING,plant_name STRING,plant_carbon STRING")
+      .load("data/homework/ant_plant_carbon.txt")

@@ -1,0 +1,10 @@
+hadoop,hive,hbase,scala,spark,flink
+hadoop,hive,hbase,scala,spark,flink
+hadoop,hive,hbase,scala,spark,flink
+hadoop,hive,hbase,scala,spark,flink
+hadoop,hive,hbase,scala,spark,flink
+hadoop,hive,hbase,scala,spark,flink
+hadoop,hive,hbase,scala,spark,flink
+hadoop,hive,hbase,scala,spark,flink
+hadoop,hive,hbase,scala,spark,flink
+hadoop,hive,hbase,scala,spark,flink

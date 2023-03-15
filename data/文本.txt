@@ -1,0 +1,53 @@
+Oracle删除数据的三种方法
+删除表（记录和结构）的语句delete——truncate——drop
+
+drop命令
+drop table 表名；
+
+例如：删除学生表(student)
+drop table student；
+
+注意：
+1、用drop删除表数据，不但会删除表中的数据，连结构也被删除了！
+
+truncate命令
+truncate  table  表名；
+
+例如：删除学生表（student）
+truncate table student；
+
+注意：
+1、用truncate删除表数据，只是删除表中的数据，表结构不会被删除！
+2、删除整个表的数据时，过程是系统一次性删除数据，效率比较高
+3、truncate删除释放空间
+
+delete命令
+delete from 表名；
+
+例如：删除学生表（student）
+delete from student；
+
+注意：
+1、用delete删除表数据，只是删除表中的数据，表结构不会被删除！
+2、虽然也是删除整个表的数据，但是过程是系统一行一行的删，效率比truncate低
+3、delete删除是不释放空间的
+
+关于truncate的小小总结：
+
+truncate table在功能上与不带where子句的delete语句相同：二者均删除表中的全部行。
+
+但truncate比delete速度快，且使用的系统和事务日志资源少。
+
+delete语句每次删除一行，并在事务日志中为所删除的每行记录一项。所以可以对delete操作进行rollback。
+
+1、truncate在各种表上无论是大的还是小的都非常快。如果有rollback命令delte将被撤销，而truncate则不会被撤销。
+
+2、truncate是一个DDL语言，向其他所有的DDL语言一样，他将被隐式提交，不能对truncate使用rollback命令。
+
+3、truncate将重新设置高水平线和所有的索引。在对整个表和索引进行完全浏览时，经过truncate操作后的表比delete操作后的表要快得多。
+
+4、truncate不能触发任何delete触发器。
+
+5、当表被清空后表和表的索引将重新设置成初始大小，而delete则不能。
+
+6、不能清空父表

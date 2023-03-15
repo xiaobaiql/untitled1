@@ -1,0 +1,4 @@
+hadoop,hive,hbase,scala
+hadoop1,hive1,hbase1,scala1
+hadoop2,hive2,hbase2,scala2
+hadoop3,hive3,hbase3,scala3
